@@ -1,14 +1,19 @@
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" [src]="currentEvent.image_url" alt="Card image cap">
+<div  *ngIf="isVisible==true">
+<div  class="card items" style="width: 18rem;">
+  <img class="card-img-top" [src]="currentEvent.imageUrl" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{currentEvent.name}}</h5>
     <p class="card-text">{{currentEvent.description}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-
+    <i *ngIf="isPriority==false" (click)="setPriority()" class="fas fa-check-square icon-red"></i>
+    <i *ngIf="isPriority==true" (click)="setPriority()" class="fas fa-check-square icon-green"></i>
+    <i *ngIf="isVisible==false" (click)="setVisible()" class="far fa-eye myicon"></i>
+    <i *ngIf="isVisible==true" (click)="setVisible()" class="fas fa-eye myicon"></i>
   </div>
+
+
   <div class="card-footer text-muted">
     {{currentEvent.dateStarted}}
   </div>
+</div>
 </div>
 

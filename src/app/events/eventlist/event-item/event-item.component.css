@@ -1,0 +1,29 @@
+.icon-red{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: red;
+
+}
+
+.icon-green{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: green;
+}
+
+.icon-text{
+  padding-left: 10px;
+  color: black;
+}
+
+i:hover {
+cursor: pointer;
+}
+
+.items{
+  margin-bottom: 20px;
+}
+
+.myicon{
+  margin-left: 10px;
+}

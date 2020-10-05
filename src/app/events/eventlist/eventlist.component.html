@@ -1,4 +1,25 @@
-<app-event-item></app-event-item>
-<app-event-item></app-event-item>
-<app-event-item></app-event-item>
+<div class="row">
+  <div class="col">
+
+    <app-event-item  *ngFor="let item of Events; let i = index"
+    [currentEvent]="item" >
+
+    </app-event-item>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Hide Events
+      </button>
+      <div class="dropdown-menu" (click)="hideEvent()">
+        <app-event-item  class="dropdown-item" *ngFor="let item of HideEvents; let i = index"
+    [currentEvent]="item" >
+
+    </app-event-item>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
 

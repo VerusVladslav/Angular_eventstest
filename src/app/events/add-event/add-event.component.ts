@@ -9,7 +9,7 @@ export class AddEventComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+   ngOnInit() {
   }
 
 }
