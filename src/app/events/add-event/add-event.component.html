@@ -1,22 +1,29 @@
+
+
+<form #addForm="ngForm" (ngSubmit)="sendNewEvent(); addForm.reset()">
+
+
 <div class="forms">
 
 
 <div class="form-group ">
-  <label for="Name">Name</label>
-  <input type="email" class="form-control" id="Name" aria-describedby="Name" placeholder="Name">
+  <label for="Title">Event Title</label>
+    <input [(ngModel)]="newTitle" type="text" class="form-control" id="title" name="title" aria-describedby="Title"
+      placeholder="Title">
  </div>
 
 <div class="form-group">
-  <label for="exampleInputPassword1">Description</label>
-  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Description">
+  <label for="Description">Description</label>
+  <input [(ngModel)]= "newDesc" type="text" class="form-control" name="Description" id="Description" placeholder="Description">
 </div>
 <div class="form-group">
   <label for="Image">Image</label>
-  <input type="file" class="form-control-file" id="Image">
+  <input [(ngModel)]= "newImage" type="url" class="form-control" name="Image" id="Image" placeholder="Url">
 </div>
 <div class="form-group">
-  <label for="inputDate">Date</label>
-  <input type="date" class="form-control">
+  <label for="Date">Date</label>
+  <input [(ngModel)]= "newDate" type="date" class="form-control" name="Date" id="Date">
 </div>
-<button type="submit" class="btn btn-primary">Add</button>
+<button type="submit"  class="btn btn-primary">Add</button>
 </div>
+</form>

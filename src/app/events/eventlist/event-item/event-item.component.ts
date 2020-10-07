@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import {Event} from '../../event.model';
+import {EventService} from '../../event.service';
+
 @Component({
   selector: 'app-event-item',
   templateUrl: './event-item.component.html',
@@ -15,23 +17,34 @@ export class EventItemComponent implements OnInit {
   @Input() currentEvent: Event;
 
 
-  isVisible: boolean = true;
-  isPriority: boolean = false;
+  isVisible = true;
+  isPriority = false;
 
+  // tslint:disable-next-line: typedef
   setVisible()
   {
     this.currentEvent.isVisible = !this.currentEvent.isVisible;
     this. isVisible = !this.isVisible;
   }
 
+  // tslint:disable-next-line: typedef
   setPriority()
   {
     this.isPriority = !this.isPriority;
   }
+  // tslint:disable-next-line: typedef
+  Infopage(id: number)
+  {
+  }
+  // tslint:disable-next-line: typedef
+  editeitem()
+  {
+  this.service.GetEditEvent(this.currentEvent.id);
+  }
+ constructor(private service: EventService) { }
 
- constructor() { }
+  ngOnInit(): void {
 
-  ngOnInit() {
   }
 
 }

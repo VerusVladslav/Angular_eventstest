@@ -1,4 +1,4 @@
-<div  *ngIf="isVisible==true">
+<div  *ngIf="isVisible==true" [routerLink]="['/', currentEvent.id]">
 <div  class="card items" style="width: 18rem;">
   <img class="card-img-top" [src]="currentEvent.imageUrl" alt="Card image cap">
   <div class="card-body">
@@ -8,10 +8,13 @@
     <i *ngIf="isPriority==true" (click)="setPriority()" class="fas fa-check-square icon-green"></i>
     <i *ngIf="isVisible==false" (click)="setVisible()" class="far fa-eye myicon"></i>
     <i *ngIf="isVisible==true" (click)="setVisible()" class="fas fa-eye myicon"></i>
+    <i class="fas fa-edit myicon" (click)="editeitem()"></i>
+
   </div>
 
 
   <div class="card-footer text-muted">
+
     {{currentEvent.dateStarted}}
   </div>
 </div>
